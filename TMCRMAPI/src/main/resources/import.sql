@@ -1,0 +1,1 @@
+INSERT INTO Customer (ID,EMAIL,FNAME, LNAME, GENDER, MOBILE_PHONE, HASHEDP) VALUES (1,'test@admin.com','nick', 'lastname', 'MALE', '5445885544', '81dc9bdb52d04dc20036dbd8313ed055')

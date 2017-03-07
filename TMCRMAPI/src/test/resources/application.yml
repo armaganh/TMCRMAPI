@@ -1,0 +1,23 @@
+spring:
+    cloud:
+      discovery:
+        enabled: false
+    config:
+      enabled: false
+    datasource:
+        driver-class-name: org.h2.Driver
+        password: ''
+        url: jdbc:h2:mem:test;IGNORECASE=TRUE;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;INIT=CREATE SCHEMA IF NOT EXISTS BTX
+        username: sa
+    jpa:
+        database: H2
+        hibernate:
+            ddl-auto: create-drop
+            dialect: org.hibernate.dialect.H2Dialect
+            format_sql: true
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        show-sql: true
+        
+eureka:
+  client:
+    enabled: false

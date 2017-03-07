@@ -1,0 +1,31 @@
+server:
+    contextPath: /api
+    port: ${SERVER_PORT:8090}
+spring:
+      application:
+        name: TMCRMAPI  # Service registers under this name
+      datasource:
+        driver-class-name: org.h2.Driver
+        default_schema: BTX
+        password: ''
+        url: jdbc:h2:mem:test;IGNORECASE=TRUE;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;INIT=CREATE SCHEMA IF NOT EXISTS BTX
+        username: sa
+      redis:
+        host: ${REDIS_HOST:localhost}
+        password: ${REDIS_PASS:1234}
+        port: ${REDIS_PORT:6379}
+      jpa:
+        hibernate:
+          ddl-auto: create-drop
+        properties:
+          hibernate:
+            dialect: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
+
+# Discovery Server Access
+eureka:
+ client:
+  serviceUrl:
+     defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:1111}/eureka/
+  instance:
+   leaseRenewalIntervalInSeconds: 5   # DO NOT DO THIS IN PRODUCTION
