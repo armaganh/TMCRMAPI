@@ -3,7 +3,7 @@ This is a sample project includes at the below ;
   * SPRING boot
   * OAuth2 
   * Redis
-  * Eureka Cloud
+  * Eureka
 
 The project was developed with TDD development. 
 
